@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="weather.css" />
+		<script src="weather.js"></script>
+		<title>Matthew McMahon</title>
+	</head>
+
+	<body>
+		<header>
+			<h1 id="-name">5-Day Weather Forcast Comparison</h1>
+		</header>
+
+		<main>
+			<form id="locationForm">
+				<div id="form">
+					<div id="locations">
+						<label for="city1">Location 1: City:</label>
+						<input
+							type="text"
+							id="city1"
+							name="city1"
+							required
+							placeholder="Please enter a city." />
+						<label for="state1">State:</label>
+						<select name="state1" id="state1" required></select>
+						<hr />
+
+						<label for="city2">Location 2: City:</label>
+						<input
+							type="text"
+							id="city2"
+							name="city2"
+							required
+							placeholder="Please enter a city." />
+						<label for="state2">State:</label>
+						<select name="state2" id="state2" required></select>
+					</div>
+					<div id="degreeUnit">
+						<input
+							type="radio"
+							id="degreeUnitC"
+							name="degreeUnit"
+							value="C"
+							required />
+						<label for="degreeUnitC">Celcius</label>
+						<input
+							type="radio"
+							id="degreeUnitF"
+							name="degreeUnit"
+							value="F"
+							required />
+						<label for="degreeUnitF">Fahrenheit</label>
+					</div>
+					<div id="submit">
+						<button>Compare</button>
+					</div>
+				</div>
+			</form>
+
+			<div id="forecast" style="display: none">
+				<div><h2>5-Day Forecast</h2></div>
+				<div id="fcCity1">
+					<h3 id="cityName1"></h3>
+					<table>
+						<thead>
+							<tr>
+								<th title="Day of the week" style="background-color: #bbb">
+									Day
+								</th>
+								<th id="city1dotw0"></th>
+								<th id="city1dotw1"></th>
+								<th id="city1dotw2"></th>
+								<th id="city1dotw3"></th>
+								<th id="city1dotw4"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr style="background-color: #ddd">
+								<td
+									title="Highest forecasted temperature of the day"
+									style="background-color: #bbb">
+									<b>High</b>
+								</td>
+								<td id="city1dotwHigh0"></td>
+								<td id="city1dotwHigh1"></td>
+								<td id="city1dotwHigh2"></td>
+								<td id="city1dotwHigh3"></td>
+								<td id="city1dotwHigh4"></td>
+							</tr>
+							<tr>
+								<td
+									title="Lowest forecasted temperature of the day"
+									style="background-color: #bbb">
+									<b>Low</b>
+								</td>
+								<td id="city1dotwLow0"></td>
+								<td id="city1dotwLow1"></td>
+								<td id="city1dotwLow2"></td>
+								<td id="city1dotwLow3"></td>
+								<td id="city1dotwLow4"></td>
+							</tr>
+							<tr style="background-color: #ddd">
+								<td
+									title="Likelihood of percipitation in percentage"
+									style="background-color: #bbb">
+									<b>Rain</b>
+								</td>
+								<td id="city1dotwRain0"></td>
+								<td id="city1dotwRain1"></td>
+								<td id="city1dotwRain2"></td>
+								<td id="city1dotwRain3"></td>
+								<td id="city1dotwRain4"></td>
+							</tr>
+							<tr>
+								<td
+									title="Forecasted weather outlook in graphical form"
+									style="background-color: #bbb">
+									<b>Outlook</b>
+								</td>
+								<td id="city1dotwOut0"></td>
+								<td id="city1dotwOut1"></td>
+								<td id="city1dotwOut2"></td>
+								<td id="city1dotwOut3"></td>
+								<td id="city1dotwOut4"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="fcCity2">
+					<h3 id="cityName2"></h3>
+					<table>
+						<thead>
+							<tr>
+								<th title="Day of the week" style="background-color: #bbb">
+									Day
+								</th>
+								<th id="city2dotw0"></th>
+								<th id="city2dotw1"></th>
+								<th id="city2dotw2"></th>
+								<th id="city2dotw3"></th>
+								<th id="city2dotw4"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr style="background-color: #ddd">
+								<td
+									title="Highest forecasted temperature of the day"
+									style="background-color: #bbb">
+									<b>High</b>
+								</td>
+								<td id="city2dotwHigh0"></td>
+								<td id="city2dotwHigh1"></td>
+								<td id="city2dotwHigh2"></td>
+								<td id="city2dotwHigh3"></td>
+								<td id="city2dotwHigh4"></td>
+							</tr>
+							<tr>
+								<td
+									title="Lowest forecasted temperature of the day"
+									style="background-color: #bbb">
+									<b>Low</b>
+								</td>
+								<td id="city2dotwLow0"></td>
+								<td id="city2dotwLow1"></td>
+								<td id="city2dotwLow2"></td>
+								<td id="city2dotwLow3"></td>
+								<td id="city2dotwLow4"></td>
+							</tr>
+							<tr style="background-color: #ddd">
+								<td
+									title="Likelihood of percipitation in percentage"
+									style="background-color: #bbb">
+									<b>Rain</b>
+								</td>
+								<td id="city2dotwRain0"></td>
+								<td id="city2dotwRain1"></td>
+								<td id="city2dotwRain2"></td>
+								<td id="city2dotwRain3"></td>
+								<td id="city2dotwRain4"></td>
+							</tr>
+							<tr>
+								<td
+									title="Forecasted weather outlook in graphical form"
+									style="background-color: #bbb">
+									<b>Outlook</b>
+								</td>
+								<td id="city2dotwOut0"></td>
+								<td id="city2dotwOut1"></td>
+								<td id="city2dotwOut2"></td>
+								<td id="city2dotwOut3"></td>
+								<td id="city2dotwOut4"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<script>
+				// Array of states
+				const states = [
+					"Alabama",
+					"Alaska",
+					"Arizona",
+					"Arkansas",
+					"California",
+					"Colorado",
+					"Connecticut",
+					"Delaware",
+					"Florida",
+					"Georgia",
+					"Hawaii",
+					"Idaho",
+					"Illinois",
+					"Indiana",
+					"Iowa",
+					"Kansas",
+					"Kentucky",
+					"Louisiana",
+					"Maine",
+					"Maryland",
+					"Massachusetts",
+					"Michigan",
+					"Minnesota",
+					"Mississippi",
+					"Missouri",
+					"Montana",
+					"Nebraska",
+					"Nevada",
+					"New Hampshire",
+					"New Jersey",
+					"New Mexico",
+					"New York",
+					"North Carolina",
+					"North Dakota",
+					"Ohio",
+					"Oklahoma",
+					"Oregon",
+					"Pennsylvania",
+					"Rhode Island",
+					"South Carolina",
+					"South Dakota",
+					"Tennessee",
+					"Texas",
+					"Utah",
+					"Vermont",
+					"Virginia",
+					"Washington",
+					"West Virginia",
+					"Wisconsin",
+					"Wyoming",
+				];
+
+				// Function to populate state selectors
+				function populateStateSelectors() {
+					const stateSelectors = document.querySelectorAll(
+						'select[name^="state"]'
+					);
+					stateSelectors.forEach((selector) => {
+						states.forEach((state) => {
+							const option = document.createElement("option");
+							option.value = state;
+							option.textContent = state;
+							selector.appendChild(option);
+						});
+					});
+				}
+
+				// Call the function to populate the selectors
+				populateStateSelectors();
+			</script>
+
+			<div>
+				<p>
+					This webpage uses the
+					<a
+						href="https://open-meteo.com/en/docs"
+						title="Open-Meteo Weather Forecast API Documentation"
+						>Open-Meteo Weather Forecast API</a
+					>
+					and the
+					<a
+						href="https://open-meteo.com/en/docs/geocoding-api"
+						title="Open-Meteo Geocoding API Documentation"
+						>Open-Meteo Geocoding API</a
+					>
+				</p>
+			</div>
+		</main>
+
+		<footer>
+			<p id="footer-p">
+				20 May, 2024.
+				<span id="beaverOrange">Oregon State University</span> CS290 Matthew
+				McMahon.
+			</p>
+		</footer>
+	</body>
+</html>

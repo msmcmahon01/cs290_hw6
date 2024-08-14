@@ -1,0 +1,165 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	color: #333;
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-size: 20%;
+}
+
+header,
+main,
+footer {
+	margin: 0;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+header,
+main {
+	padding-inline: 10px;
+}
+
+header,
+footer {
+	color: #fff;
+	padding-inline: 10px;
+	width: 100%;
+	position: sticky;
+	box-shadow: 0 0 10px #0004;
+}
+
+header {
+	top: 0;
+	background-color: #eee;
+}
+
+header > *:first-child {
+	margin-top: 0;
+}
+
+main {
+	background-color: #0004;
+	padding-bottom: 20px;
+}
+
+footer {
+	bottom: 0;
+	background-color: #000000;
+}
+
+footer > *:last-child {
+	margin-bottom: 0;
+}
+
+#form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+#locations {
+	display: inline;
+}
+
+#degreeUnit {
+	display: flex;
+	align-items: center;
+}
+
+#degreeUnit > input {
+	width: 5%;
+}
+
+#cityName1,
+#cityName2 {
+	text-transform: capitalize;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2em;
+	color: #111;
+}
+
+h2 {
+	font-size: 1.5em;
+	color: #222;
+}
+
+h3 {
+	font-size: 1.2em;
+	color: rgb(43, 43, 43);
+}
+
+p {
+	font-size: 1em;
+	color: #333;
+	width: 75%;
+}
+
+img {
+	max-width: 40%;
+	height: auto;
+}
+
+table {
+	width: 100%;
+	border-collapse: unset;
+	border: 1px solid #000;
+}
+
+th,
+td {
+	width: 16%;
+	text-align: center;
+	border: 1px solid #000;
+}
+
+dd {
+	width: 75%;
+}
+
+form input,
+form button,
+form textarea,
+form select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #333;
+	box-sizing: border-box;
+}
+
+form button {
+	background-color: #bbb;
+}
+
+div {
+	margin: 10px 0;
+	padding: 10px;
+	background-color: #f2f2f2;
+}
+
+#footer-p {
+	color: #ffffff;
+	margin-top: 1%;
+}
+
+a,
+a:visited {
+	color: #333;
+}
+
+a:hover,
+#beaverOrange {
+	color: #d73f09;
+}
